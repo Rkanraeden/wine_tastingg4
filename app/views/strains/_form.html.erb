@@ -1,0 +1,27 @@
+<%= form_with(model: strain) do |form| %>
+  <% if strain.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(strain.errors.count, "error") %> prohibited this strain from being saved:</h2>
+
+      <ul>
+        <% strain.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :strain, style: "display: block" %>
+    <%= form.text_field :strain %>
+  </div>
+
+  <div>
+    <%= form.label :percentaje, style: "display: block" %>
+    <%= form.text_field :percentaje %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
